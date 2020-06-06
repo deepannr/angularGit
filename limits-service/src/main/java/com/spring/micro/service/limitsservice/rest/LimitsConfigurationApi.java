@@ -9,7 +9,7 @@ import com.spring.micro.service.limitsservice.conf.Configuration;
 import com.spring.micro.service.limitsservice.data.Limits;
 
 @RestController
-@RequestMapping("/limits")
+@RequestMapping("/limits-service")
 public class LimitsConfigurationApi {
 	
 	@Autowired
