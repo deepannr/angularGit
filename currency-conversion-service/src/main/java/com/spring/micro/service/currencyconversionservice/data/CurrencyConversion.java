@@ -1,38 +1,36 @@
-package com.spring.micro.service.currencyexchangeservice.data;
+package com.spring.micro.service.currencyconversionservice.data;
 
 import java.math.BigDecimal;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-@Entity
-public class ExchangeValue {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+public class CurrencyConversion {
 	private int id;
 
-	@Column(name = "currency_from")
 	private String from;
 
-	@Column(name = "currency_to")
 	private String to;
 
 	private BigDecimal conversionMultiple;
-	
+
+	private BigDecimal quantity;
+
+	private BigDecimal totalAmount;
+
 	private int port;
 
-	public ExchangeValue() {
+	public CurrencyConversion() {
 		// Do Nothing
 	}
 
-	public ExchangeValue(String from, String to, BigDecimal conversionMultiple) {
+	public CurrencyConversion(int id, String from, String to, BigDecimal conversionMultiple, BigDecimal quantity,
+			BigDecimal totalAmount, int port) {
 		super();
+		this.id = id;
 		this.from = from;
 		this.to = to;
 		this.conversionMultiple = conversionMultiple;
+		this.quantity = quantity;
+		this.totalAmount = totalAmount;
+		this.port = port;
 	}
 
 	public int getId() {
@@ -65,6 +63,22 @@ public class ExchangeValue {
 
 	public void setConversionMultiple(BigDecimal conversionMultiple) {
 		this.conversionMultiple = conversionMultiple;
+	}
+
+	public BigDecimal getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(BigDecimal quantity) {
+		this.quantity = quantity;
+	}
+
+	public BigDecimal getTotalAmount() {
+		return totalAmount;
+	}
+
+	public void setTotalAmount(BigDecimal totalAmount) {
+		this.totalAmount = totalAmount;
 	}
 
 	public int getPort() {
