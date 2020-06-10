@@ -4,9 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 //import org.springframework.context.annotation.PropertySource;
 //import org.springframework.context.annotation.PropertySources;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 //@PropertySources({@PropertySource("http://localhost:8888/limits-service-${env}.properties")})
+@EnableDiscoveryClient
 public class LimitsServiceApplication {
 
 	public static void main(String[] args) {
