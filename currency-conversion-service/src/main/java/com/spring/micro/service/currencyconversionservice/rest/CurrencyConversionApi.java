@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +19,7 @@ import com.spring.micro.service.currencyconversionservice.proxy.CurrencyExchange
 @RestController
 @RequestMapping("/currency-conversion")
 class CurrencyConversionApi {
+	private Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@Autowired
 	private CurrencyExchangeServiceProxy exchangeProxy;
@@ -26,9 +29,12 @@ class CurrencyConversionApi {
 			@PathVariable BigDecimal quantity) {
 
 		CurrencyConversion conversion = exchangeProxy.retrieveExchangeValue(from, to);
-
-		return new CurrencyConversion(conversion.getId(), from, to, conversion.getConversionMultiple(), quantity,
+		
+		CurrencyConversion currency = new CurrencyConversion(conversion.getId(), from, to, conversion.getConversionMultiple(), quantity,
 				quantity.multiply(conversion.getConversionMultiple()), conversion.getPort());
+		
+		logger.info("Currency Conversion: {}", currency);
+		return currency;
 	}
 
 	@GetMapping("/from/{from}/to/{to}/quantity/{quantity}")
@@ -43,7 +49,9 @@ class CurrencyConversionApi {
 						uriVariables)
 				.getBody();
 
-		return new CurrencyConversion(conversion.getId(), from, to, conversion.getConversionMultiple(), quantity,
+		CurrencyConversion currency = new CurrencyConversion(conversion.getId(), from, to, conversion.getConversionMultiple(), quantity,
 				quantity.multiply(conversion.getConversionMultiple()), conversion.getPort());
+		logger.info("Currency Conversion: {}", currency);
+		return currency;
 	}
 }

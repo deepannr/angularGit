@@ -29,4 +29,9 @@ public class Limits {
 	public void setMinimum(int minimum) {
 		this.minimum = minimum;
 	}
+
+	@Override
+	public String toString() {
+		return "Limits [maximum=" + maximum + ", minimum=" + minimum + "]";
+	}
 }
