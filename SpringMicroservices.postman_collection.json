@@ -1,0 +1,280 @@
+{
+	"info": {
+		"_postman_id": "d9d9191c-ddfc-4695-aa42-bf562927e9dd",
+		"name": "SpringMicroservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Limits-Service8080",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/limits-service/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"limits-service",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Limits-Service8080AppF5",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://5cg6411vlz.ctl.intranet:8080/application/actuator/refresh",
+					"protocol": "http",
+					"host": [
+						"5cg6411vlz",
+						"ctl",
+						"intranet"
+					],
+					"port": "8080",
+					"path": [
+						"application",
+						"actuator",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Limits-Service8081",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/limits-service/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"limits-service",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Limits-ServiceFaultTolerance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/limits-service/fault-tolerance-example",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"limits-service",
+						"fault-tolerance-example"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "currency-exchange-service 8000",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/currency-exchange/from/USD/to/INR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"currency-exchange",
+						"from",
+						"USD",
+						"to",
+						"INR"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "currency-exchange-service 8001",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8001/currency-exchange/from/USD/to/INR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"currency-exchange",
+						"from",
+						"USD",
+						"to",
+						"INR"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "currency-exchange-service Zuul",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/currency-exchange-service/currency-exchange/from/USD/to/INR",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"currency-exchange-service",
+						"currency-exchange",
+						"from",
+						"USD",
+						"to",
+						"INR"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "currency-conversion-service Direct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8100/currency-conversion/from/USD/to/INR/quantity/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"currency-conversion",
+						"from",
+						"USD",
+						"to",
+						"INR",
+						"quantity",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "currency-conversion-service Feign",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8100/currency-conversion/feign/from/USD/to/INR/quantity/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"currency-conversion",
+						"feign",
+						"from",
+						"USD",
+						"to",
+						"INR",
+						"quantity",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "currency-conversion-service Zuul Feign",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/currency-conversion-service/currency-conversion/feign/from/USD/to/INR/quantity/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"currency-conversion-service",
+						"currency-conversion",
+						"feign",
+						"from",
+						"USD",
+						"to",
+						"INR",
+						"quantity",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "eureka-naming-server",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8761/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8761",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Spring Cloud Conf Server Limits-Service",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8888/limits-service/qa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"limits-service",
+						"qa"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
